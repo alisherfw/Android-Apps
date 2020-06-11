@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SeekBar</string>
+    <string name="question">What\'s your TOPIK level?</string>
+</resources>
