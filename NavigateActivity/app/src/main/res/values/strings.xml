@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NavigateActivity</string>
+    <string name="gotoSecondAcitvity">Open another Activity</string>
+    <string name="second_activity_text">Welcome</string>
+</resources>
