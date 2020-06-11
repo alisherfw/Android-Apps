@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Random random = new Random();
                 int randomNum = random.nextInt(colors.length);
-
                 WindowView.setBackgroundColor(colors[randomNum]);
             }
         });
