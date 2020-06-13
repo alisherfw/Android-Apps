@@ -18,6 +18,8 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
 
     public MyAdapter(Context context, List listitem) {
+        this.context = context;
+        this.listItems = listitem;
     }
 
     @NonNull
