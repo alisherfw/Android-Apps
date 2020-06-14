@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.recyclerview.R;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 import Model.ListItem;
 
@@ -39,6 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         ListItem item = listItems.get(position);
 
 
+        holder.rating.setText(item.getRating());
         holder.name.setText(item.getName());
         holder.description.setText(item.getDescription());
     }
@@ -51,12 +54,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
         public TextView description;
+        public TextView rating;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = (TextView) itemView.findViewById(R.id.title);
             description = (TextView) itemView.findViewById(R.id.description);
+            rating = (TextView) itemView.findViewById(R.id.rating);
 
 
         }
