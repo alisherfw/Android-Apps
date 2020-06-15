@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         listItems = new ArrayList<>();
         ListItem item1 = new ListItem("Spiderman", "Super fantastic film", "Nice 4.2");
         ListItem item2 = new ListItem("Joker", "Thriller movie", "Great 5.0");
+        ListItem item3 = new ListItem("Another ONe", "Nice comedy film", "Nice 4.1");
 
 //        for(int i = 0; i < 10; i++) {
 //            ListItem item = new ListItem(
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
         listItems.add(item1);
         listItems.add(item2);
+        listItems.add(item3);
 
         adapter = new MyAdapter(this, listItems);
         recyclerView.setAdapter(adapter);
