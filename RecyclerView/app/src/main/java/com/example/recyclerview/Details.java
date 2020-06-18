@@ -28,7 +28,5 @@ public class Details extends AppCompatActivity {
             rating.setText(extras.getString("rating"));
         }
 
-
-
     }
 }

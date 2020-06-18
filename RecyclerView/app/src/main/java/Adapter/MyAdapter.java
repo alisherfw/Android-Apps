@@ -83,7 +83,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
             context.startActivity(intent);
 
-            Toast.makeText(context, item.getName(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(context, item.getName(), Toast.LENGTH_LONG).show();
         }
     }
 }
