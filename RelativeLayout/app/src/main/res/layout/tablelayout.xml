@@ -10,18 +10,29 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary">
+            android:padding="15dp"
+            android:background="#E91E63">
 
             <TextView
-                android:id="@+id/text1"
-                android:text="First Text"
+                android:text="First Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
-                android:padding="15dp"
-
                 />
-
+            <TextView
+                android:paddingLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Second Name"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:paddingLeft="20dp"
+                android:textColor="#fff"
+                />
         </TableRow>
     </TableLayout>
 </RelativeLayout>
