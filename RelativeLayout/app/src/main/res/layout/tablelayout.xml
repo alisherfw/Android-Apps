@@ -34,5 +34,36 @@
                 android:textColor="#fff"
                 />
         </TableRow>
+
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:background="#8BC34A">
+
+            <TextView
+                android:text="Bonni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:paddingLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kealy"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25"
+                android:paddingLeft="20dp"
+                android:textColor="#fff"
+                />
+        </TableRow>
     </TableLayout>
 </RelativeLayout>
