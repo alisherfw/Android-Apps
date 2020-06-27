@@ -8,18 +8,23 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="680dp">
+        android:layout_height="712dp"
+        android:layout_above="@+id/darkModeButtonId"
+        android:layout_marginBottom="-29dp">
 
         <TextView
+            android:id="@+id/loreamTextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text" />
     </ScrollView>
+
     <Button
+        android:id="@+id/darkModeButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Dark Mode"
-        />
+        android:layout_marginTop="33dp"
+        android:text="Turn on Dark Mode" />
 </RelativeLayout>
