@@ -52,7 +52,7 @@
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/EnterButtonId"
         android:background="@drawable/button_style"
-        android:text="Exit"
+        android:text="Edit"
         />
 
 </RelativeLayout>
