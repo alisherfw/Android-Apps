@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         batImage = (ImageView) findViewById(R.id.batId);
-//        batImage.setBackgroundResource(R.drawable.bat_anim);
-//        batAnimation = (AnimationDrawable) batImage.getBackground();
+        batImage.setBackgroundResource(R.drawable.bat_anim);
+        batAnimation = (AnimationDrawable) batImage.getBackground();
 
     }
 
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 Animation startanimation = AnimationUtils.loadAnimation(getApplicationContext(),
                         R.anim.fadein_animation);
                 batImage.startAnimation(startanimation);
+                batAnimation.start();
 
             }
         }, 50);
