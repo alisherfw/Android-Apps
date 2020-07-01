@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             playButton.setText("Play");
         }
     }
+
+
     public void startMusic() {
         mediaPlayer.start();
         playButton.setText("Pause");
