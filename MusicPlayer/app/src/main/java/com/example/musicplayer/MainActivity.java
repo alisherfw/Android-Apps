@@ -6,12 +6,14 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
     private Button playButton;
+    private TextView durationText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mediaPlayer = new MediaPlayer();
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.theme_music);
+
+        durationText = (TextView) findViewById(R.id.durationTextId);
 
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -34,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int duration = mediaPlayer.getDuration();
+                int secund = duration / 1000;
+                int minute = secund / 60;
+                secund = secund  % 60;
+
+                String mDuration = String.valueOf(minute);
+                String sDuration = String.valueOf(secund);
+                durationText.setText("Duration: " + mDuration + ":" + sDuration);
+
                 if(mediaPlayer.isPlaying()) {
                     pauseMusic();
                 } else {
