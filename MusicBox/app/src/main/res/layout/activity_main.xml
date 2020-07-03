@@ -68,4 +68,14 @@
         android:layout_marginRight="10dp"
         android:layout_below="@id/seekBarId"
         />
+    <Button
+        android:id="@+id/playButtonId"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/play_button_24"
+        android:layout_below="@id/seekBarId"
+        android:layout_marginTop="50dp"
+        />
+
 </RelativeLayout>
