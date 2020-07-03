@@ -77,5 +77,22 @@
         android:layout_below="@id/seekBarId"
         android:layout_marginTop="50dp"
         />
-
+    <Button
+        android:id="@+id/nextButtonId"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/next_button_24"
+        android:layout_below="@id/seekBarId"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/playButtonId"
+        />
+    <Button
+        android:id="@+id/previousButtonId"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/previous_button_24"
+        android:layout_below="@id/seekBarId"
+        android:layout_marginTop="50dp"
+        android:layout_toLeftOf="@id/playButtonId"
+        />
 </RelativeLayout>
