@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MusicBox</string>
+    <string name="song_name">Pirates of the Caribbean</string>
+    <string name="artist_name">Patrik Pietschmann</string>
 </resources>
