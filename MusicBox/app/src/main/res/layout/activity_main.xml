@@ -17,7 +17,7 @@
         android:src="@drawable/oval" />
     <ImageView
         android:id="@+id/dividerImageId"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="8dp"
         android:src="@drawable/divider"
         android:layout_centerHorizontal="true"
