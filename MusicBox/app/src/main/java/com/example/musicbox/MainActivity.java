@@ -27,13 +27,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setupUI();
 
 
-    }
-    public void setupUI() {
         mediaPlayer = new MediaPlayer();
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.music);
+
+        setupUI();
+
+    }
+
+    public void setupUI() {
 
         artistImage = (ImageView) findViewById(R.id.ovalimageId);
         leftTime = (TextView) findViewById(R.id.leftTimeId);
@@ -69,13 +72,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void pauseMusic() {
         if(mediaPlayer != null) {
             mediaPlayer.pause();
-            playButton.setBackgroundResource(R.drawable.pause_button_24);
-        }
-    }
-    public void playMusic() {
-        if(mediaPlayer != null) {
-            mediaPlayer.start();
             playButton.setBackgroundResource(R.drawable.play_button_24);
         }
     }
+
+
+    public void playMusic() {
+        if(mediaPlayer != null) {
+            mediaPlayer.start();
+            playButton.setBackgroundResource(R.drawable.pause_button_24);
+        }
+    }
+    @Override
+    protected void onDestroy() {
+        if(mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+        super.onDestroy();
+    }
+
 }
