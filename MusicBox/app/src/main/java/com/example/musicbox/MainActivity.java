@@ -34,6 +34,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setupUI();
 
+        int sDuration = mediaPlayer.getDuration() / 1000;
+        int mDuration = sDuration / 60;
+        sDuration = sDuration % 60;
+
+        String minute = String.valueOf(mDuration);
+        String secund = String.format("%02d",sDuration);
+
+
+        rightTime.setText(minute + ":" + secund);
+
+
+        seekBar.setMax(mediaPlayer.getDuration());
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if(fromUser) {
+                    mediaPlayer.seekTo(progress);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
     }
 
     public void setupUI() {
