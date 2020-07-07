@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -34,17 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setupUI();
 
-        int sDuration = mediaPlayer.getDuration() / 1000;
-        int mDuration = sDuration / 60;
-        sDuration = sDuration % 60;
-
-        String minute = String.valueOf(mDuration);
-        String secund = String.format("%02d",sDuration);
-
-
-        rightTime.setText(minute + ":" + secund);
-
-
         seekBar.setMax(mediaPlayer.getDuration());
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -52,6 +43,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(fromUser) {
                     mediaPlayer.seekTo(progress);
                 }
+                SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+                int currentPos = mediaPlayer.getCurrentPosition();
+                int duration = mediaPlayer.getDuration();
+
+                leftTime.setText(dateFormat.format(new Date(currentPos)));
+                rightTime.setText(dateFormat.format(new Date(duration)));
             }
 
             @Override
