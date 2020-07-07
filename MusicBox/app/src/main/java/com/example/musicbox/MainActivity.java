@@ -58,14 +58,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.playButtonId:
-
+                if(mediaPlayer.isPlaying()) {
+                    pauseMusic();
+                } else {
+                    playMusic();
+                }
                 break;
         }
     }
     public void pauseMusic() {
-
+        if(mediaPlayer != null) {
+            mediaPlayer.pause();
+            playButton.setBackgroundResource(R.drawable.pause_button_24);
+        }
     }
     public void playMusic() {
-
+        if(mediaPlayer != null) {
+            mediaPlayer.start();
+            playButton.setBackgroundResource(R.drawable.play_button_24);
+        }
     }
 }
