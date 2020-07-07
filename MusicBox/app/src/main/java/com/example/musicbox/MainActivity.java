@@ -84,10 +84,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.previousButtonId:
-
+                backMusic();
                 break;
             case R.id.nextButtonId:
-
+                nextMusic();
                 break;
             case R.id.playButtonId:
                 if(mediaPlayer.isPlaying()) {
@@ -98,6 +98,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+    public void backMusic() {
+        if(mediaPlayer.isPlaying()) {
+            mediaPlayer.seekTo(0);
+        }
+    }
+    public void nextMusic() {
+        if(mediaPlayer.isPlaying()) {
+            mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() + 5000);
+        }
+    }
+
     public void pauseMusic() {
         if(mediaPlayer != null) {
             mediaPlayer.pause();
@@ -122,7 +133,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         super.onDestroy();
     }
-
     public void updateThread() {
         thread = new Thread() {
             @Override
