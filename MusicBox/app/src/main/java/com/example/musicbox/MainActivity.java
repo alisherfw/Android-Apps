@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SeekBar seekBar;
     private TextView leftTime, rightTime;
     private ImageView artistImage;
+    private Thread thread;
 
 
     @Override
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(mediaPlayer != null) {
             mediaPlayer.start();
             playButton.setBackgroundResource(R.drawable.pause_button_24);
+            updateThread();
         }
     }
     @Override
@@ -119,6 +121,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mediaPlayer = null;
         }
         super.onDestroy();
+    }
+
+    public void updateThread() {
+        thread = new Thread() {
+            @Override
+            public void run() {
+                try {
+
+                    while(mediaPlayer != null && mediaPlayer.isPlaying()) {
+                        Thread.sleep(50);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                int newPostion = mediaPlayer.getCurrentPosition();
+                                int newMax = mediaPlayer.getDuration();
+                                seekBar.setMax(newMax);
+                                seekBar.setProgress(newPostion);
+
+                                leftTime.setText(String.valueOf(new java.text.SimpleDateFormat("mm:ss")
+                                .format(new Date(mediaPlayer.getCurrentPosition()))));
+
+
+                            }
+                        });
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.start();
     }
 
 }
