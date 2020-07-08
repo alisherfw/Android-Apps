@@ -2,6 +2,8 @@ package com.example.internetisconnected;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                statusText.setText("Please wait!");
+
                 if(isInternetConnected()) {
                     imageView.setBackgroundResource(R.drawable.internet_24);
                     statusText.setText("Connected!");
@@ -41,13 +46,12 @@ public class MainActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imageViewId);
     }
 
-    public boolean isInternetConnected() {
-        try {
-            String command = "ping -c 1 google.com";
-            return (Runtime.getRuntime().exec(command).waitFor() == 0);
-        } catch (Exception e) {
-            return false;
-        }
+    private boolean isInternetConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(
+                Context.CONNECTIVITY_SERVICE
+        );
+        return cm.getActiveNetworkInfo() != null;
+
     }
 
 }
