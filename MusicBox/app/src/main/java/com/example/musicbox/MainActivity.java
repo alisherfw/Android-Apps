@@ -131,6 +131,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mediaPlayer.release();
             mediaPlayer = null;
         }
+        thread.interrupt();
+        thread = null;
         super.onDestroy();
     }
     public void updateThread() {
