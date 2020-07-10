@@ -34,5 +34,4 @@
         android:layout_marginBottom="40dp"
         android:textColor="#404040"
         />
-
 </RelativeLayout>
