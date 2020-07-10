@@ -21,7 +21,6 @@
         android:textStyle="bold"
         android:layout_margin="10dp"
         android:text="Check Connectivity"
-        android:drawableLeft="@drawable/internet_24"
         android:textAlignment="center"
         />
     <TextView
