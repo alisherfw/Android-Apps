@@ -23,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
 
         setupUI();
 
+        if(isInternetConnected()) {
+            imageView.setBackgroundResource(R.drawable.internet_24);
+            statusText.setText("Connected!");
+        } else {
+            imageView.setBackgroundResource(R.drawable.nointernet_24);
+            statusText.setText("Not Connected!");
+        }
+
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
