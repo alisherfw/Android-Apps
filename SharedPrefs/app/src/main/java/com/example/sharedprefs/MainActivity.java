@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView = (TextView) findViewById(R.id.editTextId);
+        textView = (TextView) findViewById(R.id.textViewId);
         saveButton = (Button) findViewById(R.id.saveButtonId);
         editText = (EditText) findViewById(R.id.editTextId);
 
