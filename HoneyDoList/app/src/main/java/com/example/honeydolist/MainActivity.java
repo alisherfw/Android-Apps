@@ -33,9 +33,23 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!editText.getText().toString().equals("")) {
+                    String message = editText.getText().toString();
+                    writeToFile(message);
+                } else {
+
+                }
 
             }
         });
+
+        try {
+            if(readFromFile() != null) {
+                editText.setText(readFromFile());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
