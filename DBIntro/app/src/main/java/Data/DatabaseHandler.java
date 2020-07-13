@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
+import java.net.Inet4Address;
+import java.util.ArrayList;
+import java.util.List;
+
 import Model.Contact;
 import Utils.Util;
 import androidx.annotation.Nullable;
@@ -68,6 +72,30 @@ class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.getString(1), cursor.getString(2));
 
         return contact;
-
     }
+
+    public List<Contact> getAllContacts() {
+        //    Get all contacts
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Contact> contactList = new ArrayList<>();
+        //    Select all contacts
+        String selectAll = "SELECT * FROM " + Util.TABLE_NAME;
+        Cursor cursor = db.rawQuery(selectAll, null);
+
+        if(cursor.moveToFirst()) {
+            do {
+                Contact contact = new Contact();
+                contact.setId(Integer.parseInt(cursor.getString(0)));
+                contact.setName(cursor.getString(1));
+                contact.setPhoneNumber(cursor.getString(2));
+
+//                add contact object to our contact list
+
+                contactList.add(contact);
+
+            } while(cursor.moveToNext());
+        }
+        return contactList;
+    }
+
 }
