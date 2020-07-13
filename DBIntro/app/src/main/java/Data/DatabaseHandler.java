@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -96,6 +95,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             } while(cursor.moveToNext());
         }
         return contactList;
+    }
+//    Update contact
+    public int updateContact(Contact contact) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Util.KEY_NAME, contact.getName());
+        contentValues.put(Util.KEY_PHONE_NUMBER, contact.getPhoneNumber());
+//        update row
+        return db.update(Util.TABLE_NAME, contentValues, Util.KEY_ID + "=?",
+                new String[] {String.valueOf(contact.getId())});
     }
 
 }

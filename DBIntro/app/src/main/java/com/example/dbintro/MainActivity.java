@@ -25,13 +25,27 @@ public class MainActivity extends AppCompatActivity {
         db.addContact(new Contact("Bella", "298589232"));
 
 //        Read them back
-        Log.d("Reading", "Reading all contacts");
+        Log.d("Reading",    "Reading all contacts");
         List<Contact> contactList = db.getAllContacts();
-        for (Contact c : contactList) {
-            String log = "ID: " + c.getId()+ " , Name: " + c.getName() + ", Phone: " + c.getPhoneNumber();
-            Log.d("Name: ", log);
 
-        }
+//        Get 1 contact
+        Contact oneContact = db.getContact(1);
+        oneContact.setName("Polooooooo");
+        oneContact.setPhoneNumber("00000000");
+//        Update contact
+
+        int newContact = db.updateContact(oneContact);
+
+        Log.d("One Contact: ", "Update row " + String.valueOf(newContact) + " Name: " + oneContact.getName() + " Phone: " + oneContact.getPhoneNumber());
+
+
+
+
+//        for (Contact c : contactList) {
+//            String log = "ID: " + c.getId()+ " , Name: " + c.getName() + ", Phone: " + c.getPhoneNumber();
+//            Log.d("Name: ", log);
+//
+//        }
 
     }
 }
