@@ -5,9 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.Contacts;
-import android.provider.ContactsContract;
-import android.view.animation.AnimationUtils;
+
 
 import Model.Contact;
 import Utils.Util;
