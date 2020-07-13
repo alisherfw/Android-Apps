@@ -15,7 +15,7 @@ import Model.Contact;
 import Utils.Util;
 import androidx.annotation.Nullable;
 
-class DatabaseHandler extends SQLiteOpenHelper {
+public class DatabaseHandler extends SQLiteOpenHelper {
 
     public DatabaseHandler(@Nullable Context context) {
         super(context, Util.DATABASE_NAME, null, Util.DATABASE_VERSION);
