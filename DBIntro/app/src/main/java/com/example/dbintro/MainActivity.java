@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//        for (Contact c : contactList) {
-//            String log = "ID: " + c.getId()+ " , Name: " + c.getName() + ", Phone: " + c.getPhoneNumber();
-//            Log.d("Name: ", log);
-//
-//        }
+        for (Contact c : contactList) {
+            String log = "ID: " + c.getId()+ " , Name: " + c.getName() + ", Phone: " + c.getPhoneNumber();
+            Log.d("Name: ", log);
+
+        }
 
     }
 }
