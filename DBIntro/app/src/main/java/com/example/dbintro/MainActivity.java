@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         DatabaseHandler db = new DatabaseHandler(this);
 
+        Log.d("DB count: ", String.valueOf(db.getContactsCount()));
+
 //                Insert contacts
         Log.d("Insert: ", "Insertin...");
 //        db.addContact(new Contact("Paul", "412424512"));
@@ -29,16 +31,16 @@ public class MainActivity extends AppCompatActivity {
         List<Contact> contactList = db.getAllContacts();
 
 //        Get 1 contact
-        Contact oneContact = db.getContact(4);
-        oneContact.setName("Polooooooo");
-        oneContact.setPhoneNumber("00000000");
+//        Contact oneContact = db.getContact(4);
+//        oneContact.setName("Polooooooo");
+//        oneContact.setPhoneNumber("00000000");
 //        Update contact
 
 //        int newContact = db.updateContact(oneContact);
 //
 //        Log.d("One Contact: ", "Update row " + String.valueOf(newContact) + " Name: " + oneContact.getName() + " Phone: " + oneContact.getPhoneNumber());
 
-        db.deleteContact(oneContact);
+//        db.deleteContact(oneContact);
 
         for (Contact c : contactList) {
             String log = "ID: " + c.getId()+ " , Name: " + c.getName() + ", Phone: " + c.getPhoneNumber();
